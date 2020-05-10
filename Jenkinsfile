@@ -1,4 +1,8 @@
 pipeline {
+     environment {
+        registry = "timmlot/capstone"
+        registryCredential = ‘dockerhub’
+     }
      agent any
      stages {
          stage('Lint') {
@@ -14,7 +18,9 @@ pipeline {
          }
          stage('Upload image to Docker') {
               steps {
+                  docker.withRegistry( '', registryCredential ) {
                   sh 'docker push timmlot/capstone'
+                  }
               }
          }
          stage('Upload to AWS') {
