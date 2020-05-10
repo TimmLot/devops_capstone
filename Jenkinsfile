@@ -7,6 +7,11 @@ pipeline {
                   sh 'tidy -q -e *.html'
               }
          }
+         stage('Build') {
+              steps {
+                  sh 'docker build --tag=timmlot/capstone .'
+              }
+         }
          stage('Upload to AWS') {
               steps {
                   withAWS(region:'us-west-2',credentials:'jenkins') {
