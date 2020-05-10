@@ -18,9 +18,11 @@ pipeline {
          }
          stage('Upload image to Docker') {
               steps {
+                script {
                   docker.withRegistry( '', registryCredential ) {
-                  sh 'docker push timmlot/capstone'
+                    sh 'docker push timmlot/capstone'
                   }
+                }
               }
          }
          stage('Upload to AWS') {
