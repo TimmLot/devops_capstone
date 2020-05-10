@@ -12,6 +12,12 @@ pipeline {
                   sh 'docker build --tag=timmlot/capstone .'
               }
          }
+         stage('Upload image to Docker') {
+              steps {
+                  sh 'docker login'
+                  sh 'docker push timmlot/capstone'
+              }
+         }
          stage('Upload to AWS') {
               steps {
                   withAWS(region:'us-west-2',credentials:'jenkins') {
