@@ -1,7 +1,7 @@
 pipeline {
      environment {
         registry = "timmlot/capstone"
-        registryCredential = ‘dockerhub’
+        registryCredential = 'dockerhub'
      }
      agent any
      stages {
