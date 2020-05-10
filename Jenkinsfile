@@ -14,7 +14,6 @@ pipeline {
          }
          stage('Upload image to Docker') {
               steps {
-                  sh 'docker login'
                   sh 'docker push timmlot/capstone'
               }
          }
