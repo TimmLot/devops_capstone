@@ -25,6 +25,10 @@ pipeline {
                 }
               }
          }
+         stage('Deploy')
+              steps {
+                  sh 'kubectl apply -f app.yml'
+              }
          stage('Upload to AWS') {
               steps {
                   withAWS(region:'us-west-2',credentials:'jenkins') {
