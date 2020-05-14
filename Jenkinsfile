@@ -29,7 +29,7 @@ pipeline {
               steps {
                   withAWS(region:'us-west-2',credentials:'udacity1') {
                   sh "aws eks --region us-west-2 update-kubeconfig --name udacity"
-                  sh 'kubectl apply -f app.yaml'
+                  sh 'kubectl apply -f app.yml'
                   }
               }
          }
