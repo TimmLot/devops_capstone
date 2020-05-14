@@ -28,6 +28,7 @@ pipeline {
          stage('Deploy') {
               steps {
                   withAWS(region:'us-west-2',credentials:'jenkins') {
+                  sh "aws eks --region us-west-2 update-kubeconfig --name udacity"
                   sh 'kubectl apply -f app.yml'
                   }
               }
