@@ -6,8 +6,8 @@ metadata:
   region: us-west-2
 
 managedNodeGroups:
-  - name: managedudacity-1
-    instanceType: t2.medium
+  - name: udacity-1
+    instanceType: t3.medium
     minSize: 1
     desiredCapacity: 3
     maxSize: 4
