@@ -1,15 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mynginx-deployment
-  labels: 
+  name: nginx-deployment
+  labels:
     app: capstone
 spec:
-  replicas: 2
-      spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: capstone
+  template:
+    metadata:
+      labels:
+        app: capstone
+    spec:
       containers:
-        - name: capstone
-          imagePullPolicy: Always
-          image: timmlot/capstone
-          ports:
-          - containerPort: 80
+      - name: capstone
+        image: timmlot/capstone
+        ports:
+        - containerPort: 80
