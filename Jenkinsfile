@@ -27,14 +27,8 @@ pipeline {
          }
          stage('Deploy') {
               steps {
-                  sh 'kubectl apply -f app.yml'
-              }
-         }
-         stage('Upload to AWS') {
-              steps {
                   withAWS(region:'us-west-2',credentials:'jenkins') {
-                  sh 'echo "Uploading content with AWS creds"'
-                      s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'jenkins-bucket-001')
+                  sh 'kubectl apply -f app.yml'
                   }
               }
          }
