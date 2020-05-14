@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: mynginx-deployment
   labels: 
-    app: mynginx
+    app: capstone
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        app: mynginx
+        app: capstone
     spec:
       containers:
-        - name: mynginx
+        - name: capstone
           imagePullPolicy: Always
           image: timmlot/capstone
           ports:
