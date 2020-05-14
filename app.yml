@@ -6,11 +6,7 @@ metadata:
     app: capstone
 spec:
   replicas: 2
-  template:
-    metadata:
-      labels:
-        app: capstone
-    spec:
+      spec:
       containers:
         - name: capstone
           imagePullPolicy: Always
