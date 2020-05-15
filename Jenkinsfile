@@ -13,7 +13,7 @@ pipeline {
          }
          stage('Build') {
               steps {
-                  sh 'docker build --tag=timmlot/capstone .'
+                  sh 'docker build --tag=timmlot/capstone:2'
               }
          }
          stage('Upload image to Docker') {
