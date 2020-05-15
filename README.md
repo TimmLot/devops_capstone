@@ -5,7 +5,7 @@ Udacity Cloud DevOps Engineer capstone project
 The kubernetes cluster on AWS is automatically created with eksctl which is leveraging cloudfront. <br />
 For details see createcluster.sh and cluster.yml.
 To ensure that at least 75% of the pods are up during deployment the strategy rolling update is used. <br />
-See also app.yml
+See also app.yml.
 
 # Jenkins
 The jenkins pipeline uses hadolint for linting the dockerfile and tidy for linting the index.html. <br />
