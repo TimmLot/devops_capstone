@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: capstone
-        image: timmlot/capstone
+        image: timmlot/capstone2
         ports:
         - containerPort: 80
         imagePullPolicy: Always
