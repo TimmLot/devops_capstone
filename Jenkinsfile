@@ -13,14 +13,14 @@ pipeline {
          }
          stage('Build') {
               steps {
-                  sh 'docker build --tag=timmlot/capstone2'
+                  sh 'docker build --tag=timmlot/capstone2 .'
               }
          }
          stage('Upload image to Docker') {
               steps {
                 script {
                   docker.withRegistry( '', registryCredential ) {
-                    sh 'docker push timmlot/capstone2 .'
+                    sh 'docker push timmlot/capstone2'
                   }
                 }
               }
