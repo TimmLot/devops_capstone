@@ -20,7 +20,7 @@ pipeline {
               steps {
                 script {
                   docker.withRegistry( '', registryCredential ) {
-                    sh 'docker push timmlot/capstone2'
+                    sh 'docker push timmlot/capstone2 .'
                   }
                 }
               }
