@@ -24,3 +24,4 @@ spec:
         image: timmlot/capstone
         ports:
         - containerPort: 80
+        imagePullPolicy: Always
